@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+     <!-- 두 번째 페이지 -->
+     <div class="background-grid"></div>
+
     <!-- 첫 번째 페이지 -->
     <div class="floating_mini_icons">
         <img src="assets/floating_mini_icons/leaf.png" alt="leaf" style="top: 20%; left: 10%;">
@@ -20,10 +23,7 @@
         <img src="assets/pukyong.png" alt="pukyong">
         <button onclick="rotateGrid()">Click</button>
     </div>
-
-     <!-- 두 번째 페이지 -->
-     <div class="background-grid"></div>
-
+    
      <script>
          function rotateGrid() {
              document.querySelector('.background-grid').classList.add('rotate-left');
