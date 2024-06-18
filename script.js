@@ -13,15 +13,40 @@ function rotateAndMove() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const backyong = document.getElementById('backyong');
+    const moveAmount = 2; // 이동 거리 설정
 
-    // 마우스 클릭 이벤트 리스너 추가
-    document.addEventListener('click', function(event) {
-        const targetX = event.clientX;
-        const targetY = event.clientY;
+    function moveBackyong(direction) {
+        let currentLeft = parseInt(backyong.style.left) || 50;
+        let currentTop = parseInt(backyong.style.top) || 50;
 
-        // 토끼 이미지 이동
-        const backyong = document.getElementById('backyong');
-        backyong.style.transition = 'transform 1s ease';
-        backyong.style.transform = `translate(${targetX}px, ${targetY}px)`;
+        switch(direction) {
+            case 'ArrowLeft':
+                backyong.style.left = (currentLeft - moveAmount) + '%';
+                break;
+            case 'ArrowRight':
+                backyong.style.left = (currentLeft + moveAmount) + '%';
+                break;
+            case 'ArrowUp':
+                backyong.style.top = (currentTop - moveAmount) + '%';
+                break;
+            case 'ArrowDown':
+                backyong.style.top = (currentTop + moveAmount) + '%';
+                break;
+            default:
+                break;
+        }
+
+         // 스크롤 위치를 캐릭터 이미지 중심으로 조정
+         const viewportHeight = window.innerHeight;
+         const scrollToY = backyong.getBoundingClientRect().top - (viewportHeight / 2);
+         window.scrollTo({
+             top: scrollToY,
+             behavior: 'smooth'
+         });
+    }
+
+    // 키보드 입력 이벤트 리스너 등록
+    document.addEventListener('keydown', function(event) {
+        moveBackyong(event.key);
     });
 });
