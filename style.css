@@ -64,6 +64,8 @@ body::before {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    color: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .center_elements button:hover {
