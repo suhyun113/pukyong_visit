@@ -73,7 +73,7 @@ body::before {
 }
 
 
-/* .background-grid {
+.background-grid {
     position: absolute;
     top: 0;
     left: 0;
@@ -89,4 +89,4 @@ body::before {
 
 .background-grid.rotate-left {
     transform: rotate(-10deg);
-} */
+}
