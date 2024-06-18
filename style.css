@@ -71,3 +71,22 @@ body::before {
 .center_elements button:hover {
     background-color: #fab0b0;
 }
+
+
+/* .background-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #d9f0ff 1px, transparent 1px),
+                      linear-gradient(to bottom, #d9f0ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0;
+    transform-origin: center center;
+    transition: transform 1s ease;
+}
+
+.background-grid.rotate-left {
+    transform: rotate(-10deg);
+} */
