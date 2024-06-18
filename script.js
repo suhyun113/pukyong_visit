@@ -45,9 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
          // 스크롤 위치를 캐릭터 이미지 중심으로 조정
          const viewportHeight = window.innerHeight;
-         const scrollToY = backyong.getBoundingClientRect().top - (viewportHeight / 2);
+         const viewportWidth = window.innerWidth;
+         const scrollToY = bbugong.getBoundingClientRect().top + window.scrollY - (viewportHeight / 2);
+         const scrollToX = bbugong.getBoundingClientRect().left + window.scrollX - (viewportWidth / 2);
          window.scrollTo({
              top: scrollToY,
+             left: scrollToX,
              behavior: 'smooth'
          });
     }
