@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const moveAmount = 2; // 이동 거리 설정
 
     function moveBackyong(direction) {
-        let currentLeft = parseInt(backyong.style.left) || 50;
-        let currentTop = parseInt(backyong.style.top) || 50;
+        let currentLeft = parseInt(bbugong.style.left) || 50;
+        let currentTop = parseInt(bbugong.style.top) || 50;
 
         switch(direction) {
             case 'ArrowLeft':
