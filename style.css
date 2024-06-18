@@ -25,7 +25,7 @@ body {
 }
 
 .background-grid.rotate-left {
-    transform: rotate(-25deg);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-10deg) translateZ(-100px);
 }
 
 .floating_mini_icons {
