@@ -14,7 +14,7 @@ function rotateAndMove() {
 
     // 키보드 입력 이벤트 리스너 등록
     document.addEventListener('keydown', function(event) {
-        moveBackyong(event.key);
+        moveBbugong(event.key);
     });
 }
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const bbugong = document.getElementById('bbugong');
     const moveAmount = 2; // 이동 거리 설정
 
-    function moveBackyong(direction) {
+    function moveBbugong(direction) {
         let currentLeft = parseInt(bbugong.style.left) || 50;
         let currentTop = parseInt(bbugong.style.top) || 50;
 
@@ -54,6 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 키보드 입력 이벤트 리스너 등록
     document.addEventListener('keydown', function(event) {
-        moveBackyong(event.key);
+        moveBbugong(event.key);
     });
 });
