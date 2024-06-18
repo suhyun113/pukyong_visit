@@ -7,8 +7,15 @@ function rotateAndMove() {
 
     // 백경이 이미지 이동
     const backyong = document.getElementById('backyong');
-    backyongrabbit.style.transform = 'translateX(0%)'; // 초기 위치 설정
-    backyong.style.left = '50%'; // 중앙으로 이동
+    // 이동 애니메이션 후, 중앙 이미지 왼쪽에 정렬
+    setTimeout(() => {
+        backyong.style.left = 'calc(50% - 150px)'; // 중앙 이미지 왼쪽에 위치
+    }, 100); // 약간의 지연을 줘서 자연스럽게 이동 시작
+
+    // 키보드 입력 이벤트 리스너 등록
+    document.addEventListener('keydown', function(event) {
+        moveBackyong(event.key);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
