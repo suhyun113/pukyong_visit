@@ -82,8 +82,9 @@ body {
 
 .bbugong {
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: -200px; /* 초기 위치 설정 */
     transform: translateY(-50%);
     transition: left 2s ease;
+    z-index: 3; /*가장 위쪽에 배치*/
 }
