@@ -11,11 +11,11 @@ function rotateAndMove() {
     setTimeout(() => {
         bbugong.style.left = 'calc(50% - 100px)'; // 중앙 이미지 왼쪽에 위치
 
-        // 건물 이미지를 표시
-        setTimeout(() => {
+    // 건물 이미지를 표시
+        bbugong.addEventListener('transitionend', function() {
             var buildings = document.querySelector('.buildings');
-            buildings.style.display = 'block';
-        }, 2000); // 이동 애니메이션 시간이 끝난 후 건물 표시
+            buildings.style.display = 'flex';
+        }, { once: true }); // 이벤트 리스너는 한 번만 실행되고 제거됨
     }, 100); // 약간의 지연을 줘서 자연스럽게 이동 시작
 }
 
