@@ -24,7 +24,7 @@ body {
 }
 
 .background-grid.rotate-left {
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-10deg) translateZ(-100px);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
 }
 
 .buildings {
@@ -75,7 +75,7 @@ body {
 }
 
 .center_elements img.rotate-left {
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-10deg) translateZ(-100px);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
 }
 
 .center_elements button {
