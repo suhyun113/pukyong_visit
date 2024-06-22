@@ -133,3 +133,45 @@ body {
     width: 60px;
     height: auto;
 }
+
+#backyong-speech-bubble {
+    position: absolute;
+    left: 52%;
+    top: 79%;
+    transform: translate(-50%, -50%);
+    background-color: #ffcccb;
+    border: 1px solid #d9f0ff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hide speech bubbles */
+}
+
+
+#bbugong-speech-bubble {
+    position: absolute;
+    left: 78%;
+    top: 77%;
+    background-color: #d4c8ed;
+    border: 1px solid #d9f0ff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hide speech bubbles */
+}
+
+#backyong-speech-bubble p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: white;
+    font-family: 'Single Day', cursive;
+}
+
+#bbugong-speech-bubble p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: white;
+    font-family:'Dongle', cursive;
+}

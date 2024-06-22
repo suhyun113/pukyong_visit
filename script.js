@@ -13,10 +13,17 @@ function rotateAndMove() {
         backyong.style.left = 'calc(50% - 100px)';
         bbugong.style.left = 'calc(50% - 100px)'; // 중앙 이미지 왼쪽에 위치
 
-    // 건물 이미지를 표시
-        bbugong.addEventListener('transitionend', function() {
-            var buildings = document.querySelector('.buildings');
+        const backyongSpeechBubble = document.querySelector('#backyong-container .speech-bubble');
+        backyongSpeechBubble.style.display = 'block';
+
+        const bbugongSpeechBubble = document.querySelector('#bbugong-container .speech-bubble');
+        bbugongSpeechBubble.style.display = 'block';
+
+        // 건물 이미지를 표시
+        bbugong.addEventListener('transitionend', function showBuildings() {
+            const buildings = document.querySelector('.buildings');
             buildings.style.display = 'flex';
+            bbugong.removeEventListener('transitionend', showBuildings);
         }, { once: true }); // 이벤트 리스너는 한 번만 실행되고 제거됨
     }, 100); // 약간의 지연을 줘서 자연스럽게 이동 시작
 }

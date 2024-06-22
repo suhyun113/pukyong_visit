@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>title</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet"> <!--백경이 글씨체-->
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Single+Day&display=swap" rel="stylesheet"> <!--뿌공이 글씨체-->
 </head>
 <body>
-     <!-- 배경 그리드 -->
+    <!-- 배경 그리드 -->
     <div class="background-grid"></div>
 
     <!-- 건물 이미지 -->
@@ -40,8 +42,19 @@
     </div>
 
     <!-- 캐릭터 이미지-->
-    <img src="assets/character/backyong.gif" alt="backyong" class="backyong" id="backyong">
-    <img src="assets/character/bbugong.gif" alt="bbugong" class="bbugong" id="bbugong">
+    <div id="backyong-container">
+        <img src="assets/character/backyong.gif" alt="backyong" class="backyong" id="backyong">
+        <div id="backyong-speech-bubble" class="speech-bubble">
+            <p> 안녕! 나는 백경이야~ </p>
+        </div>
+    </div>
+
+    <div id="bbugong-container">
+        <img src="assets/character/bbugong.gif" alt="bbugong" class="bbugong" id="bbugong">
+        <div id="bbugong-speech-bubble" class="speech-bubble">
+            <p> 안녕! 나는 뿌공이야~ </p>
+        </div>
+    </div>
 
      <script src="script.js"></script>
 </body>
