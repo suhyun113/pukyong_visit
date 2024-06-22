@@ -101,7 +101,12 @@ function rotateAndMove() {
 function togglePopup(character) {
     var backyong_popup = document.getElementById('backyong-popup');
     var bbugong_popup = document.getElementById('bbugong-popup');
+    var overlay = document.getElementById('modal-overlay');
     
+    backyong_popup.style.display = 'none';
+    bbugong_popup.style.display = 'none';
+    overlay.style.display = 'none';
+
     if (character == 'backyong')
         backyong_popup.style.display = 'block';
     else if (character == 'bbugong')
@@ -116,13 +121,27 @@ document.getElementById('bbugong').addEventListener('click', function() {
     togglePopup('bbugong');
 });
 
+document.getElementById('modal-overlay').addEventListener('click', function() {
+    var backyong_popup = document.getElementById('backyong-popup');
+    var bbugong_popup = document.getElementById('bbugong-popup');
+    var overlay = document.getElementById('modal-overlay');
+    
+    backyong_popup.style.display = 'none';
+    bbugong_popup.style.display = 'none';
+    overlay.style.display = 'none';
+});
+
 // 팝업 닫기 함수
 function closeBackyongPopup() {
-    var popup = document.getElementById('backyong-popup');
-    popup.style.display = 'none';
+    var backyong_popup = document.getElementById('backyong-popup');
+    var overlay = document.getElementById('modal-overlay');
+    backyong_popup.style.display = 'none';
+    overlay.style.display = 'none';
 }
 
 function closeBbugongPopup() {
-    var popup = document.getElementById('bbugong-popup');
-    popup.style.display = 'none';
+    var bbugong_popup = document.getElementById('bbugong-popup');
+    var overlay = document.getElementById('modal-overlay');
+    bbugong_popup.style.display = 'none';
+    overlay.style.display = 'none';
 }
