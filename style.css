@@ -127,6 +127,7 @@ body {
 }
 
 .backyong {
+    filter: brightness(0.5);
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
@@ -135,9 +136,11 @@ body {
     z-index: 3; /*가장 위쪽에 배치*/
     width: 80px;
     height: auto;
+    cursor: pointer;
 }
 
 .bbugong {
+    filter: brightness(0.5);
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
@@ -146,14 +149,23 @@ body {
     z-index: 3; /*가장 위쪽에 배치*/
     width: 60px;
     height: auto;
+    cursor: pointer;
 }
 
+.backyong:hover {
+    filter: brightness(1);
+}
+
+.bbugong:hover {
+    filter: brightness(1);
+
+}
 
 #backyong-speech-bubble {
     position: absolute;
     top: 79%;
-    left: 52%;
-    transform: translate(-50%, -50%);
+    left: 40%;
+    /* transform: translate(-50%, -50%); */
     background-color: #ffcccb;
     border: 1px solid #d9f0ff;
     padding: 10px;
@@ -162,18 +174,26 @@ body {
     display: none; 
 }
 
+#backyong-speech-bubble.active{
+    display: block;
+}
+
 
 #bbugong-speech-bubble {
     position: absolute;
-    left: 86%;
-    top: 79%;
-    transform: translate(-50%, -50%);
+    left: 80%;
+    top: 78%;
+    /* transform: translate(-50%, -50%); */
     background-color: #d4c8ed;
     border: 1px solid #d9f0ff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: none;
+}
+
+#bbugong-speech-bubble.active {
+    display: block;
 }
 
 #backyong-speech-bubble p {
