@@ -8,16 +8,14 @@ function rotateAndMove() {
     // 뿌공이 이미지 이동
     const backyong = document.getElementById('backyong');
     const bbugong = document.getElementById('bbugong');
+
+    backyong.style.left = '-20%';
+    bbugong.style.left = '-20%';
+
     // 이동 애니메이션 후, 중앙 이미지 왼쪽에 정렬
     setTimeout(() => {
         backyong.style.left = 'calc(50% - 100px)';
         bbugong.style.left = 'calc(50% - 100px)'; // 중앙 이미지 왼쪽에 위치
-
-        const backyongSpeechBubble = document.querySelector('#backyong-container .speech-bubble');
-        backyongSpeechBubble.style.display = 'block';
-
-        const bbugongSpeechBubble = document.querySelector('#bbugong-container .speech-bubble');
-        bbugongSpeechBubble.style.display = 'block';
 
         // 건물 이미지를 표시
         bbugong.addEventListener('transitionend', function showBuildings() {
@@ -26,7 +24,18 @@ function rotateAndMove() {
             bbugong.removeEventListener('transitionend', showBuildings);
         }, { once: true }); // 이벤트 리스너는 한 번만 실행되고 제거됨
     }, 100); // 약간의 지연을 줘서 자연스럽게 이동 시작
+
+    const duration = 3000;
+    setTimeout(() => {
+        const backyongSpeechBubble = document.querySelector('#backyong-container .speech-bubble');
+        backyongSpeechBubble.style.display = 'block';
+        
+        const bbugongSpeechBubble = document.querySelector('#bbugong-container .speech-bubble');
+        bbugongSpeechBubble.style.display = 'block';
+    }, duration);
+
 }
+
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     const bbugong = document.getElementById('bbugong');
