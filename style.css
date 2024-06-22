@@ -161,7 +161,7 @@ body {
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
-    transform: translateX(200%) translateY(-20%);
+    transform: translateX(250%) translateY(-20%);
     transition: left 2s ease;
     z-index: 3; /*가장 위쪽에 배치*/
     width: 80px;
@@ -174,7 +174,7 @@ body {
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
-    transform: translateX(500%) translateY(-20%);
+    transform: translateX(580%) translateY(-40%);
     transition: left 2s ease;
     z-index: 3; /*가장 위쪽에 배치*/
     width: 60px;
@@ -211,8 +211,8 @@ body {
 
 #bbugong-speech-bubble {
     position: absolute;
-    left: 80%;
-    top: 78%;
+    left: 85%;
+    top: 76%;
     /* transform: translate(-50%, -50%); */
     background-color: #d4c8ed;
     border: 1px solid #d9f0ff;
