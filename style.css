@@ -95,17 +95,18 @@ body {
 
 
 .center_elements {
+    position: relative;
     text-align: center;
     z-index: 2;
 }
 
-.center_elements img{
+.center_elements img#main-image{
     width: 200px;
     height: auto;
     transition: transform 1s ease;
 }
 
-.center_elements img.rotate-left {
+.center_elements img#main-image.rotate-left {
     transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
 }
 
@@ -125,6 +126,27 @@ body {
 .center_elements button:hover {
     background-color: #fab0b0;
 }
+
+.center_elements p {
+    display: none;
+    position: relative;
+    top: -80px;
+    left: 80px;
+    font-size: 20px;
+    color: rgb(66, 103, 183);
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.center_elements p.rotate-left {
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+/*
+.center_elements img {
+    width: 50px; 
+    height: auto; 
+    margin-top: 20px; 
+    cursor: pointer; 
+}*/
 
 .backyong {
     filter: brightness(0.5);
