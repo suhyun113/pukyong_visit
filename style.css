@@ -9,6 +9,10 @@ body {
     position: relative;
 }
 
+#toggleButton{
+    z-index: 3;
+}
+
 .background-grid {
     position: absolute;
     top: -50;

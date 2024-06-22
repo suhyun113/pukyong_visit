@@ -1,3 +1,20 @@
+const audioContainer = document.querySelector('#audioContainer');
+const toggleButton = document.querySelector('#toggleButton');
+
+    audioContainer.autoplay = false; // 웹을 열면 자동으로 재생
+    audioContainer.loop = true; // 반복 재생 설정
+
+    // 버튼 클릭 시 재생 및 일시 정지 토글
+function toggleMusic() {
+    if (audioContainer.paused) {
+        audioContainer.play();
+        toggleButton.textContent = '🔊'; // 볼륨 모양 버튼
+    } else {
+        audioContainer.pause();
+        toggleButton.textContent = '🔇'; // 금지 모양 버튼
+    }
+}
+
 function rotateAndMove() {
     // 회전 애니메이션 추가
     document.querySelector('.background-grid').classList.add('rotate-left');
