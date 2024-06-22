@@ -29,8 +29,12 @@ function rotateAndMove() {
     // 회전 애니메이션 추가
     document.querySelector('.background-grid').classList.add('rotate-left');
     document.querySelector('.center_elements img#main-image').classList.add('rotate-left');
+    document.querySelector('.center_elements p').classList.add('rotate-left');
+    document.querySelector('.center_elements img#angle-down').classList.add('rotate-left');
     document.querySelector('.floating_mini_icons').style.display = 'none';
     document.querySelector('.center_elements button').style.display = 'none';
+    document.querySelector('.center_elements p').style.display = 'block';
+    document.querySelector('.center_elements img#angle-down').style.display = 'block';
 
     // 뿌공이 이미지 이동
     const backyong = document.getElementById('backyong');

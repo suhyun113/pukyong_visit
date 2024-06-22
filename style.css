@@ -140,13 +140,21 @@ body {
 .center_elements p.rotate-left {
     transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
 }
-/*
-.center_elements img {
-    width: 50px; 
+
+.center_elements img#angle-down {
+    display: none;
+    position: relative;
+    top: -80px;
+    left: 290px;
+    width: 100px; 
     height: auto; 
     margin-top: 20px; 
     cursor: pointer; 
-}*/
+}
+
+.center_elements img#angle-down.rotate-left {
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
 
 .backyong {
     filter: brightness(0.5);
