@@ -95,3 +95,16 @@ function rotateAndMove() {
 //         });
 //     });
 // });
+
+
+// 팝업 토글 함수
+function togglePopup() {
+    var popup = document.getElementById('character-choose-popup');
+    popup.style.display = 'block';
+}
+
+// 팝업 닫기 함수
+function closePopup() {
+    var popup = document.getElementById('character-choose-popup');
+    popup.style.display = 'none';
+}

@@ -14,6 +14,7 @@
     <!-- 배경 그리드 -->
     <div class="background-grid"></div>
 
+    <!-- 배경 음악 -->
     <button id="toggleButton" onclick="toggleMusic()">🔇</button>
     <audio id="audioContainer" src="assets/audio/never_been_better.mp3"></audio>
 
@@ -48,20 +49,32 @@
         <img src="assets/images/angle-down.png" alt="angle-down" id="angle-down">
     </div>
 
-    <!-- 캐릭터 이미지-->
+    <!-- 캐릭터 이미지 및 캐릭터 말풍선-->
     <div id="backyong-container">
-        <img src="assets/images/character/backyong.gif" alt="backyong" class="backyong" id="backyong">
+        <img onclick="togglePopup()" src="assets/images/character/backyong.gif" alt="backyong" class="backyong" id="backyong">
         <img src="assets/images/heart.png" alt="heart" id="backyong-heart">
         <div id="backyong-speech-bubble" class="speech-bubble">
             <p> 안녕! 나는 백경이야~ </p>
         </div>
     </div>
-
     <div id="bbugong-container">
         <img src="assets/images/character/bbugong.gif" alt="bbugong" class="bbugong" id="bbugong">
         <img src="assets/images/heart.png" alt="heart" id="bbugong-heart">
         <div id="bbugong-speech-bubble" class="speech-bubble">
             <p> 안녕! 나는 뿌공이야~ </p>
+        </div>
+    </div>
+
+    <!-- 캐릭터 선택 확인 팝업 창 -->
+    <div class="character-choose-popup" id="character-choose-popup">
+        <div class="popup-content">
+            <img src="assets/images/character/backyong.gif" alt="popup-backyong" class="popup-backyong-img">
+            <div id="popup-backyong-speech-bubble" class="popup-backyong-speech-bubble">
+                <p> 안녕! 나는 백경이야~ </p>
+            </div>
+            <div class="popup-backyong-buttons"></div>
+            <button onclick="closePopup()" class="popup-backyong-check">백경이로 할래요!</button>
+            <button onclick="closePopup()" class="popup-backyong-close">좀 더 고민해볼래요..</button>
         </div>
     </div>
 
