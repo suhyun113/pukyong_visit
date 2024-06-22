@@ -30,15 +30,15 @@ body {
 .buildings {
     display: none;
     position: absolute;
-    width: 100%;
+    width: 1000%;
     bottom: -200px;
     z-index: 1; /* 건물 이미지가 격자 무늬 위에 표시되도록 설정 */
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .buildings img {
-    width: 250px;
+    width: 150px;
     height: auto;
 }
 
@@ -95,6 +95,17 @@ body {
     background-color: #fab0b0;
 }
 
+.backyong {
+    position: absolute;
+    top: 80%;
+    left: 50px; /* 초기 위치 설정 */
+    transform: translateX(-10%) translateY(-60%);
+    transition: left 2s ease;
+    z-index: 3; /*가장 위쪽에 배치*/
+    width: 80px;
+    height: auto;
+}
+
 .bbugong {
     position: absolute;
     top: 80%;
@@ -102,4 +113,6 @@ body {
     transform: translateY(-50%);
     transition: left 2s ease;
     z-index: 3; /*가장 위쪽에 배치*/
+    width: 60px;
+    height: auto;
 }
