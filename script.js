@@ -1,10 +1,12 @@
 $(document).ready(function() {
     $('.backyong').hover(function() {
-        $('#backyong-speech-bubble').toggleClass('active');
+        $('#backyong-speech-bubble').toggleClass('active')
+        $('#backyong-heart').toggleClass('active');
     });
 
     $('.bbugong').hover(function() {
         $('#bbugong-speech-bubble').toggleClass('active');
+        $('#bbugong-heart').toggleClass('active');
     });
 });
 

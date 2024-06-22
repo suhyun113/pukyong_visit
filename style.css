@@ -157,7 +157,7 @@ body {
 }
 
 .backyong {
-    filter: brightness(0.5);
+    /* filter: brightness(0.5); */
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
@@ -170,7 +170,7 @@ body {
 }
 
 .bbugong {
-    filter: brightness(0.5);
+    /* filter: brightness(0.5); */
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
@@ -182,13 +182,39 @@ body {
     cursor: pointer;
 }
 
-.backyong:hover {
+/* .backyong:hover {
     filter: brightness(1);
 }
 
 .bbugong:hover {
     filter: brightness(1);
 
+} */
+
+#backyong-heart {
+    position: absolute;
+    top: 77%;
+    left: 65.5%;
+    width: 20px;
+    height: auto;
+    display: none; 
+}
+
+#backyong-heart.active{
+    display: block;
+}
+
+#bbugong-heart {
+    position: absolute;
+    top: 75.5%;
+    left: 82.3%;
+    width: 15px;
+    height: auto;
+    display: none; 
+}
+
+#bbugong-heart.active{
+    display: block;
 }
 
 #backyong-speech-bubble {
