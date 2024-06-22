@@ -132,9 +132,9 @@ body {
     position: relative;
     top: -80px;
     left: 80px;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(66, 103, 183);
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Gamja Flower', cursive;
 }
 
 .center_elements p.rotate-left {
