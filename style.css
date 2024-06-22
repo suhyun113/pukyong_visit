@@ -144,8 +144,8 @@ body {
 .center_elements img#angle-down {
     display: none;
     position: relative;
-    top: -80px;
-    left: 290px;
+    top: -100px;
+    left: 350px;
     width: 100px; 
     height: auto; 
     margin-top: 20px; 
