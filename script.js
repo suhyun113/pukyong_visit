@@ -98,13 +98,31 @@ function rotateAndMove() {
 
 
 // 팝업 토글 함수
-function togglePopup() {
-    var popup = document.getElementById('character-choose-popup');
-    popup.style.display = 'block';
+function togglePopup(character) {
+    var backyong_popup = document.getElementById('backyong-popup');
+    var bbugong_popup = document.getElementById('bbugong-popup');
+    
+    if (character == 'backyong')
+        backyong_popup.style.display = 'block';
+    else if (character == 'bbugong')
+        bbugong_popup.style.display = 'block';
 }
 
+document.getElementById('backyong').addEventListener('click', function() {
+    togglePopup('backyong');
+});
+
+document.getElementById('bbugong').addEventListener('click', function() {
+    togglePopup('bbugong');
+});
+
 // 팝업 닫기 함수
-function closePopup() {
-    var popup = document.getElementById('character-choose-popup');
+function closeBackyongPopup() {
+    var popup = document.getElementById('backyong-popup');
+    popup.style.display = 'none';
+}
+
+function closeBbugongPopup() {
+    var popup = document.getElementById('bbugong-popup');
     popup.style.display = 'none';
 }

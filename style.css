@@ -270,7 +270,7 @@ body {
 
 
 
-.character-choose-popup{
+.backyong-popup{
     display: none;
     position: fixed;
     top: 50%;
@@ -318,6 +318,69 @@ body {
 
 .popup-backyong-check,
 .popup-backyong-close {
+    width: 160px; /* 버튼의 고정된 너비 */
+    margin: 0 10px; /* 버튼 사이의 간격 */
+    padding: 10px 18px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border: 1px solid #d9f0ff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(62, 59, 59);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Gamja flower', cursive, sans-serif;
+    text-align: center;
+}
+
+
+.bbugong-popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8e7e6;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 400px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-bbugong-speech-bubble {
+    width: 180px;
+    left: 50%;
+    transform: translateX(50%);
+    background-color: #ffcccb;
+    border: 1px solid #d9f0ff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#popup-bbugong-speech-bubble p {
+    margin: 0;
+    font-size: 17px;
+    color: white;
+    font-family: 'Single Day', cursive;
+}
+
+.popup-bbugong-img {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.popup-bbugong-buttons {
+    width: 100%;
+    top: 10px; /* 팝업 하단에서 약간의 간격 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup-bbugong-check,
+.popup-bbugong-close {
     width: 160px; /* 버튼의 고정된 너비 */
     margin: 0 10px; /* 버튼 사이의 간격 */
     padding: 10px 18px;
