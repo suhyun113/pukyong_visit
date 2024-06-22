@@ -21,43 +21,23 @@ function rotateAndMove() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const bbugong = document.getElementById('bbugong');
-    const moveAmount = 2; // 이동 거리 설정
 
-    function moveBbugong(direction) {
-        let currentLeft = parseInt(bbugong.style.left) || 50;
-        let currentTop = parseInt(bbugong.style.top) || 50;
+    document.addEventListener('click', function(event) {
+        const clickX = event.clientX;
+        const clickY = event.clientY;
 
-        switch(direction) {
-            case 'ArrowLeft':
-                bbugong.style.left = (currentLeft - moveAmount) + '%';
-                break;
-            case 'ArrowRight':
-                bbugong.style.left = (currentLeft + moveAmount) + '%';
-                break;
-            case 'ArrowUp':
-                bbugong.style.top = (currentTop - moveAmount) + '%';
-                break;
-            case 'ArrowDown':
-                bbugong.style.top = (currentTop + moveAmount) + '%';
-                break;
-            default:
-                break;
-        }
+        bbugong.style.left = `${clickX}px`;
+        bbugong.style.top = `${clickY}px`;
 
-         // 스크롤 위치를 캐릭터 이미지 중심으로 조정
-         const viewportHeight = window.innerHeight;
-         const viewportWidth = window.innerWidth;
-         const scrollToY = bbugong.getBoundingClientRect().top + window.scrollY - (viewportHeight / 2);
-         const scrollToX = bbugong.getBoundingClientRect().left + window.scrollX - (viewportWidth / 2);
-         window.scrollTo({
-             top: scrollToY,
-             left: scrollToX,
-             behavior: 'smooth'
-         });
-    }
-
-    // 키보드 입력 이벤트 리스너 등록
-    document.addEventListener('keydown', function(event) {
-        moveBbugong(event.key);
+        // 스크롤 위치를 캐릭터 이미지 중심으로 조정
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+        const scrollToY = bbugong.getBoundingClientRect().top + window.scrollY - (viewportHeight / 2);
+        const scrollToX = bbugong.getBoundingClientRect().left + window.scrollX - (viewportWidth / 2);
+        window.scrollTo({
+            top: scrollToY,
+            left: scrollToX,
+            behavior: 'smooth'
+        });
     });
 });
