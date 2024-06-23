@@ -145,3 +145,19 @@ function closeBbugongPopup() {
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
 }
+
+function toggleBackyong() {
+    var backyong_popup = document.getElementById('backyong-popup');
+    var overlay = document.getElementById('modal-overlay');
+    backyong_popup.style.display = 'none';
+    overlay.style.display = 'none';
+
+    var backyong = document.querySelector('.backyong');
+    backyong.classList.add('animate-right'); //백경이 중앙으로 이동
+
+    document.querySelector('.bbugong').style.display = 'none';// 뿌공이 사라지기
+}
+
+function toggleBbugong() {
+
+}
