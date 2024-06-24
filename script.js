@@ -11,7 +11,7 @@ $(document).ready(function() {
 });
 
 const audioContainer = document.querySelector('#audioContainer');
-const toggleButton = document.querySelector('#toggleButton');
+const audioToggleButton = document.querySelector('#audio-toggleButton');
 
     audioContainer.autoplay = false; // 웹을 열면 자동으로 재생
     audioContainer.loop = true; // 반복 재생 설정
@@ -20,10 +20,10 @@ const toggleButton = document.querySelector('#toggleButton');
 function toggleMusic() {
     if (audioContainer.paused) {
         audioContainer.play();
-        toggleButton.textContent = '🔊'; // 볼륨 모양 버튼
+        audioToggleButton.textContent = '🔊'; // 볼륨 모양 버튼
     } else {
         audioContainer.pause();
-        toggleButton.textContent = '🔇'; // 금지 모양 버튼
+        audioToggleButton.textContent = '🔇'; // 금지 모양 버튼
     }
 }
 
@@ -168,6 +168,8 @@ function toggleBackyong() {
     backyong.addEventListener('click', function(){
         document.querySelector('.backyong-popup').style.display = 'none';
     });
+
+    // 백경이 마우스 포인터에 따라 이동시키기
 }
 // 뿌공이 선택 함수
 function toggleBbugong() {
@@ -187,8 +189,10 @@ function toggleBbugong() {
         document.querySelector('#bbugong-speech-bubble').style.display = 'none';
     });
 
-    // 백경이 이미지 클릭 시 팝업 띄우지 않기 
+    // 뿌공이 이미지 클릭 시 팝업 띄우지 않기 
     bbugong.addEventListener('click', function(){
         document.querySelector('.bbugong-popup').style.display = 'none';
     });
+
+    // 뿌공이 이미지 클릭 시 팝업 띄우지 않기
 }
