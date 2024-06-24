@@ -169,7 +169,26 @@ function toggleBackyong() {
         document.querySelector('.backyong-popup').style.display = 'none';
     });
 }
-
+// 뿌공이 선택 함수
 function toggleBbugong() {
+    var bbugong_popup = document.getElementById('bbugong-popup');
+    var overlay = document.getElementById('modal-overlay');
+    bbugong_popup.style.display = 'none';
+    overlay.style.display = 'none';
 
+    var bbugong = document.querySelector('.bbugong');
+    bbugong.classList.add('animate-left'); //뿌공이 중앙으로 이동
+
+    document.querySelector('.backyong').style.display = 'none';// 백경이 사라지기
+
+    // 뿌공이에게 마우스 가져다 대면 하트와 말풍선 띄우지 않기
+    bbugong.addEventListener('mouseover', function() {
+        document.querySelector('#bbugong-heart').style.display = 'none';
+        document.querySelector('#bbugong-speech-bubble').style.display = 'none';
+    });
+
+    // 백경이 이미지 클릭 시 팝업 띄우지 않기 
+    bbugong.addEventListener('click', function(){
+        document.querySelector('.bbugong-popup').style.display = 'none';
+    });
 }
