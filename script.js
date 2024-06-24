@@ -146,6 +146,7 @@ function closeBbugongPopup() {
     overlay.style.display = 'none';
 }
 
+// 백경이 선택 함수
 function toggleBackyong() {
     var backyong_popup = document.getElementById('backyong-popup');
     var overlay = document.getElementById('modal-overlay');
@@ -156,6 +157,17 @@ function toggleBackyong() {
     backyong.classList.add('animate-right'); //백경이 중앙으로 이동
 
     document.querySelector('.bbugong').style.display = 'none';// 뿌공이 사라지기
+
+    // 백경이에게 마우스 가져다 대면 하트와 말풍선 띄우지 않기
+    backyong.addEventListener('mouseover', function() {
+        document.querySelector('#backyong-heart').style.display = 'none';
+        document.querySelector('#backyong-speech-bubble').style.display = 'none';
+    });
+
+    // 백경이 이미지 클릭 시 팝업 띄우지 않기 
+    backyong.addEventListener('click', function(){
+        document.querySelector('.backyong-popup').style.display = 'none';
+    });
 }
 
 function toggleBbugong() {
