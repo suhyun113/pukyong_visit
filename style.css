@@ -194,7 +194,8 @@ body {
 #backyong-heart {
     position: absolute;
     top: 77%;
-    left: 65.5%;
+    /* left: 65.5%; */
+    left: calc(130px + 50%);
     width: 20px;
     height: auto;
     display: none; 
@@ -207,7 +208,7 @@ body {
 #bbugong-heart {
     position: absolute;
     top: 75.5%;
-    left: 82.3%;
+    left: calc(270px + 50%);
     width: 15px;
     height: auto;
     display: none; 
@@ -219,9 +220,8 @@ body {
 
 #backyong-speech-bubble {
     position: absolute;
-    top: 79%;
-    left: 40%;
-    /* transform: translate(-50%, -50%); */
+    top: 77%;
+    left: calc(-20px + 50%);
     background-color: #ffcccb;
     border: 1px solid #d9f0ff;
     padding: 10px;
@@ -237,9 +237,8 @@ body {
 
 #bbugong-speech-bubble {
     position: absolute;
-    left: 85%;
-    top: 76%;
-    /* transform: translate(-50%, -50%); */
+    top: 75%;
+    left: calc(290px + 50%);
     background-color: #d4c8ed;
     border: 1px solid #d9f0ff;
     padding: 10px;
