@@ -39,7 +39,8 @@ function clickReset() {
 
         // 백경이 이미지 클릭 시 팝업 띄우기 
         backyong.addEventListener('click', function() {
-            document.querySelector('.bakcyong-popup').style.display = 'block';
+            console.log('백경이 click')
+            document.querySelector('.backyong-popup').style.display = 'block';
         });
 
 
