@@ -1,4 +1,5 @@
 body {
+    -ms-overflow-style: none;
     margin: 0;
     padding: 0;
     background-color: white;
@@ -7,6 +8,10 @@ body {
     align-items: center;
     height: 100vh;
     position: relative;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .background-grid {
