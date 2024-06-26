@@ -209,6 +209,7 @@ function toggleBbugong() {
 
     var bbugong = document.querySelector('.bbugong');
     bbugong.classList.add('animate-left'); //뿌공이 중앙으로 이동
+    console.log('bbugong');
 
     document.querySelector('.backyong').style.display = 'none';// 백경이 사라지기
 
@@ -224,30 +225,38 @@ function toggleBbugong() {
     });
 
     // 뿌공이 마우스 클릭에 따라 이동 구현
-    function moveBbugong(event) {
-        const clickX = event.clientX;
-        const clickY = event.clientY;
+    // 뿌공이 애니메이션 함수
+    function animateBbugong(startX, startY, endX, endY) {
+        let progress = 0;
+        const duration = 500; // 애니메이션 지속 시간 (밀리초)
+        const startTime = performance.now();
 
-        const offsetX = clickX - bbugong.offsetWidth / 2;
-        const offsetY = clickY - bbugong.offsetHeight / 2;
+        function step(currentTime) {
+            progress = (currentTime - startTime) / duration;
+            if (progress < 1) {
+                const x = startX + (endX - startX) * progress;
+                const y = startY + (endY - startY) * progress;
+                bbugong.style.left = `${x}px`;
+                bbugong.style.top = `${y}px`;
+                requestAnimationFrame(step);
+            } else {
+                bbugong.style.left = `${endX}px`;
+                bbugong.style.top = `${endY}px`;
+            }
+        }
 
-        bbugong.style.left = `${offsetX}px`;
-        bbugong.style.top = `${offsetY}px`;
-
-        // 스크롤 위치를 캐릭터 이미지 중심으로 조정
-        const viewportHeight = window.innerHeight;
-        const viewportWidth = window.innerWidth;
-        const scrollToY = offsetY - (viewportHeight / 2);
-        const scrollToX = offsetX - (viewportWidth / 2);
-        window.scrollTo({
-            top: scrollToY,
-            left: scrollToX,
-            behavior: 'smooth'
-        });
-       
+        requestAnimationFrame(step);
     }
-    document.addEventListener('click', function () {
-        // 클릭 이벤트 리스너 등록
-        document.addEventListener('click', moveBbugong);
+
+    // bbugong.style.left = 
+    document.addEventListener('click', (event) => {
+        const startX = parseInt(bbugong.style.left) || 0;
+        const startY = parseInt(bbugong.style.top) || 0;
+        const endX = event.clientX - bbugong.offsetWidth / 2;
+        const endY = event.clientY - bbugong.offsetHeight / 2;
+
+        animateBbugong(startX, startY, endX, endY);
+        console.log(startX, startY, endX, endY);
     });
+
 }

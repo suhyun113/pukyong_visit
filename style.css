@@ -1,35 +1,34 @@
-body {
-    -ms-overflow-style: none;
+body, html {
     margin: 0;
     padding: 0;
+    width:100%;
+    height: 100%;
+    position: relative;
+    /* perspective: 1000px;  3D*/
+    overflow: hidden;
     background-color: white;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
-    height: 100vh;
-    position: relative;
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
 
 .background-grid {
     position: absolute;
-    top: -50;
-    left: -100;
-    width: 200%;
-    height: 200%;
+    top: 50%;
+    left: 50%;
+    width: 400%;
+    height: 400%;
     background-image: linear-gradient(to right, #d9f0ff 1px, transparent 1px),
                       linear-gradient(to bottom, #d9f0ff 1px, transparent 1px);
     background-size: 20px 20px;
     z-index: 0;
     transform-origin: center center;
     transition: transform 1s ease;
+    transform: translate(-50%, -50%);
 }
 
 .background-grid.rotate-left {
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+    transform: translate(-50%, -50%) rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
 }
 
 #reset-button{
@@ -193,14 +192,15 @@ body {
 .bbugong {
     /* filter: brightness(0.5); */
     position: absolute;
-    top: 80%;
+    /* top: 80%;
     left: -600px; /* 초기 위치 설정 */
-    transform: translateX(580%) translateY(-40%);
-    transition: left 2s ease;
+    /* transform: translateX(580%) translateY(-40%);
+    transition: left 2s ease; */
     z-index: 3; /*가장 위쪽에 배치*/
     width: 60px;
     height: auto;
     cursor: pointer;
+    transform: translate(-50%, -50%); 
 }
 
 #backyong-heart {

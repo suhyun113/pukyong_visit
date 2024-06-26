@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뿌공이 이동하기</title>
+    <style>
+        #bbugong {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="assets/images/character/bbugong.gif" id="bbugong"></div>
+
+    <script>
+        const bbugong = document.getElementById('bbugong');
+
+        function animateBbugong(startX, startY, endX, endY) {
+            let progress = 0;
+            const duration = 500; // 애니메이션 지속 시간 (밀리초)
+            const startTime = performance.now();
+
+            function step(currentTime) {
+                progress = (currentTime - startTime) / duration;
+                if (progress < 1) {
+                    const x = startX + (endX - startX) * progress;
+                    const y = startY + (endY - startY) * progress;
+                    bbugong.style.left = `${x}px`;
+                    bbugong.style.top = `${y}px`;
+                    requestAnimationFrame(step);
+                } else {
+                    bbugong.style.left = `${endX}px`;
+                    bbugong.style.top = `${endY}px`;
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        document.addEventListener('click', (event) => {
+            const startX = parseInt(bbugong.style.left) || 0;
+            const startY = parseInt(bbugong.style.top) || 0;
+            const endX = event.clientX - bbugong.offsetWidth / 2;
+            const endY = event.clientY - bbugong.offsetHeight / 2;
+
+            animateBbugong(startX, startY, endX, endY);
+            console.log(startX, startY, endX, endY);
+        });
+    </script>
+</body>
+</html>
