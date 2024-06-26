@@ -40,6 +40,7 @@ body {
     cursor: pointer;
     z-index: 1000;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: none;
 }
 
 #audio-toggleButton{

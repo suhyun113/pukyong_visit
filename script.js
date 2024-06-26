@@ -61,6 +61,7 @@ function rotateAndMove() {
     document.querySelector('.center_elements button').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'block';
     document.querySelector('.center_elements img#angle-down').style.display = 'block';
+    document.querySelector('#reset-button').style.display = 'block';
 
     // 뿌공이 이미지 이동
     const backyong = document.getElementById('backyong');
