@@ -61,7 +61,6 @@ function rotateAndMove() {
     document.querySelector('.center_elements button').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'block';
     document.querySelector('.center_elements img#angle-down').style.display = 'block';
-    document.querySelector('#reset-button').style.display = 'block';
 
     // 뿌공이 이미지 이동
     const backyong = document.getElementById('backyong');
@@ -177,6 +176,7 @@ function toggleBackyong() {
     var overlay = document.getElementById('modal-overlay');
     backyong_popup.style.display = 'none';
     overlay.style.display = 'none';
+    document.querySelector('#reset-button').style.display = 'block';
 
     var backyong = document.querySelector('.backyong');
     backyong.classList.add('animate-right'); //백경이 중앙으로 이동
@@ -202,6 +202,7 @@ function toggleBbugong() {
     var overlay = document.getElementById('modal-overlay');
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
+    document.querySelector('#reset-button').style.display = 'block';
 
     var bbugong = document.querySelector('.bbugong');
     bbugong.classList.add('animate-left'); //뿌공이 중앙으로 이동
