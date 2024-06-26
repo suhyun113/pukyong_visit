@@ -123,33 +123,6 @@ function rotateAndMove() {
 }
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const bbugong = document.getElementById('bbugong');
-
-//     document.addEventListener('click', function(event) {
-//         const clickX = event.clientX;
-//         const clickY = event.clientY;
-
-//         const offsetX = clickX - bbugong.offsetWidth / 2;
-//         const offsetY = clickY - bbugong.offsetHeight / 2;
-
-//         bbugong.style.left = `${offsetX}px`;
-//         bbugong.style.top = `${offsetY}px`;
-
-//         // 스크롤 위치를 캐릭터 이미지 중심으로 조정
-//         const viewportHeight = window.innerHeight;
-//         const viewportWidth = window.innerWidth;
-//         const scrollToY = offsetY - (viewportHeight / 2);
-//         const scrollToX = offsetX - (viewportWidth / 2);
-//         window.scrollTo({
-//             top: scrollToY,
-//             left: scrollToX,
-//             behavior: 'smooth'
-//         });
-//     });
-// });
-
-
 // 팝업 토글 함수
 function togglePopup(character) {
     var backyong_popup = document.getElementById('backyong-popup');
@@ -224,6 +197,7 @@ function toggleBackyong() {
     });
 
     // 백경이 마우스 포인터에 따라 이동시키기
+
 }
 // 뿌공이 선택 함수
 function toggleBbugong() {
@@ -249,5 +223,31 @@ function toggleBbugong() {
         document.querySelector('.bbugong-popup').style.display = 'none';
     });
 
-    // 뿌공이 이미지 클릭 시 팝업 띄우지 않기
+    // 뿌공이 마우스 클릭에 따라 이동 구현
+    function moveBbugong(event) {
+        const clickX = event.clientX;
+        const clickY = event.clientY;
+
+        const offsetX = clickX - bbugong.offsetWidth / 2;
+        const offsetY = clickY - bbugong.offsetHeight / 2;
+
+        bbugong.style.left = `${offsetX}px`;
+        bbugong.style.top = `${offsetY}px`;
+
+        // 스크롤 위치를 캐릭터 이미지 중심으로 조정
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+        const scrollToY = offsetY - (viewportHeight / 2);
+        const scrollToX = offsetX - (viewportWidth / 2);
+        window.scrollTo({
+            top: scrollToY,
+            left: scrollToX,
+            behavior: 'smooth'
+        });
+       
+    }
+    document.addEventListener('click', function () {
+        // 클릭 이벤트 리스너 등록
+        document.addEventListener('click', moveBbugong);
+    });
 }
