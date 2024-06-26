@@ -10,10 +10,34 @@ $(document).ready(function() {
     });
 });
 
+// 리셋 버튼 클릭
+function clickReset() {
+    document.getElementById('reset-button').addEventListener('click', function() {
+        // 초기 상태로 되돌리기
+        var backyong_popup = document.getElementById('backyong-popup');
+        var overlay = document.getElementById('modal-overlay');
+        var backyong = document.querySelector('.backyong');
+        var bbugong = document.querySelector('.bbugong');
+    
+        // 팝업 숨기기
+        backyong_popup.style.display = 'none';
+        overlay.style.display = 'none';
+    
+        // 백경이와 뿌공이 모두 보이게 하기
+        backyong.style.display = 'block';
+        backyong.classList.remove('animate-right'); // 애니메이션 클래스 제거
+        bbugong.style.display = 'block';
+    
+        // 하트와 말풍선 보이게 하기 (필요 시)
+        document.querySelector('.backyong-heart').style.display = 'block';
+        document.querySelector('.backyong-popup').style.display = 'block';
+    });
+}
+
 const audioContainer = document.querySelector('#audioContainer');
 const audioToggleButton = document.querySelector('#audio-toggleButton');
 
-    audioContainer.autoplay = false; // 웹을 열면 자동으로 재생
+    audioContainer.autoplay = false; // 웹을 열면 자동 재생x
     audioContainer.loop = true; // 반복 재생 설정
 
     // 버튼 클릭 시 재생 및 일시 정지 토글

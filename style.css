@@ -28,7 +28,7 @@ body {
 }
 
 #reset-button{
-    position: absolute;
+    position: fixed;
     top: 36px;
     right: 90px;
     padding: 5px 10px; /* 내부 여백 */
