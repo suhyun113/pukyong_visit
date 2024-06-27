@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    $('.backyong').hover(function() {
+    $('.backyong-before').hover(function() {
         $('#backyong-speech-bubble').toggleClass('active')
         $('#backyong-heart').toggleClass('active');
     });
 
-    $('.bbugong').hover(function() {
+    $('.bbugong-before').hover(function() {
         $('#bbugong-speech-bubble').toggleClass('active');
         $('#bbugong-heart').toggleClass('active');
     });
@@ -90,20 +90,19 @@ function rotateAndMove() {
     document.querySelector('.center_elements button').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'block';
     document.querySelector('.center_elements img#angle-down').style.display = 'block';
-    document.querySelector('.bbugong').style.display = 'block';
     
 
-    // 뿌공이 이미지 이동
-    const backyong = document.getElementById('backyong');
-    const bbugong = document.getElementById('bbugong');
+    // 백경이, 뿌공이 이미지 이동
+    const backyong_before = document.getElementById('backyong-before');
+    const bbugong_before = document.getElementById('bbugong-before');
 
-    backyong.style.left = '-20%';
-    bbugong.style.left = '-20%';
+    backyong_before.style.left = '-20%';
+    bbugong_before.style.left = '-20%';
 
     // 이동 애니메이션 후, 중앙 이미지 왼쪽에 정렬
     setTimeout(() => {
-        backyong.style.left = 'calc(50% - 100px)';
-        bbugong.style.left = 'calc(50% - 100px)'; // 중앙 이미지 왼쪽에 위치
+        backyong_before.style.left = 'calc(50% - 100px)';
+        bbugong_before.style.left = 'calc(50% - 100px)'; // 중앙 이미지 왼쪽에 위치
 
         // 건물 이미지를 표시
         // bbugong.addEventListener('transitionend', function showBuildings() {
@@ -133,18 +132,18 @@ function togglePopup(character) {
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
 
-    if (character == 'backyong')
+    if (character == 'backyong-before')
         backyong_popup.style.display = 'block';
-    else if (character == 'bbugong')
+    else if (character == 'bbugong-before')
         bbugong_popup.style.display = 'block';
 }
 
-document.getElementById('backyong').addEventListener('click', function() {
-    togglePopup('backyong');
+document.getElementById('backyong-before').addEventListener('click', function() {
+    togglePopup('backyong-before');
 });
 
-document.getElementById('bbugong').addEventListener('click', function() {
-    togglePopup('bbugong');
+document.getElementById('bbugong-before').addEventListener('click', function() {
+    togglePopup('bbugong-before');
 });
 
 document.getElementById('modal-overlay').addEventListener('click', function() {
@@ -176,6 +175,7 @@ function closeBbugongPopup() {
 function toggleBackyong() {
     var backyong_popup = document.getElementById('backyong-popup');
     var overlay = document.getElementById('modal-overlay');
+
     backyong_popup.style.display = 'none';
     overlay.style.display = 'none';
     document.querySelector('#reset-button').style.display = 'block';
@@ -186,15 +186,15 @@ function toggleBackyong() {
     document.querySelector('.bbugong').style.display = 'none';// 뿌공이 사라지기
 
     // 백경이에게 마우스 가져다 대면 하트와 말풍선 띄우지 않기
-    backyong.addEventListener('mouseover', function() {
-        document.querySelector('#backyong-heart').style.display = 'none';
-        document.querySelector('#backyong-speech-bubble').style.display = 'none';
-    });
+    // backyong.addEventListener('mouseover', function() {
+    //     document.querySelector('#backyong-heart').style.display = 'none';
+    //     document.querySelector('#backyong-speech-bubble').style.display = 'none';
+    // });
 
-    // 백경이 이미지 클릭 시 팝업 띄우지 않기 
-    backyong.addEventListener('click', function(){
-        document.querySelector('.backyong-popup').style.display = 'none';
-    });
+    // // 백경이 이미지 클릭 시 팝업 띄우지 않기 
+    // backyong.addEventListener('click', function(){
+    //     document.querySelector('.backyong-popup').style.display = 'none';
+    // });
 
     // 백경이 마우스 포인터에 따라 이동시키기
 
@@ -216,15 +216,15 @@ function toggleBbugong() {
     document.querySelector('.backyong').style.display = 'none'; // 백경이 사라지기
 
     // 뿌공이에게 마우스 가져다 대면 하트와 말풍선 띄우지 않기
-    bbugong.addEventListener('mouseover', function() {
-        document.querySelector('#bbugong-heart').style.display = 'none';
-        document.querySelector('#bbugong-speech-bubble').style.display = 'none';
-    });
+    // bbugong.addEventListener('mouseover', function() {
+    //     document.querySelector('#bbugong-heart').style.display = 'none';
+    //     document.querySelector('#bbugong-speech-bubble').style.display = 'none';
+    // });
 
-    // 뿌공이 이미지 클릭 시 팝업 띄우지 않기 
-    bbugong.addEventListener('click', function() {
-        document.querySelector('.bbugong-popup').style.display = 'none';
-    });
+    // // 뿌공이 이미지 클릭 시 팝업 띄우지 않기 
+    // bbugong.addEventListener('click', function() {
+    //     document.querySelector('.bbugong-popup').style.display = 'none';
+    // });
 }
 
 // 뿌공이 애니메이션 함수
