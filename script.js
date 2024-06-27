@@ -152,17 +152,6 @@ function toggleBackyong() {
 
     document.querySelector('.bbugong').style.display = 'none';// 뿌공이 사라지기
 
-    // 백경이에게 마우스 가져다 대면 하트와 말풍선 띄우지 않기
-    // backyong.addEventListener('mouseover', function() {
-    //     document.querySelector('#backyong-heart').style.display = 'none';
-    //     document.querySelector('#backyong-speech-bubble').style.display = 'none';
-    // });
-
-    // // 백경이 이미지 클릭 시 팝업 띄우지 않기 
-    // backyong.addEventListener('click', function(){
-    //     document.querySelector('.backyong-popup').style.display = 'none';
-    // });
-
     // 백경이 마우스 포인터에 따라 이동시키기
 
 }
@@ -174,6 +163,9 @@ function toggleBbugong() {
     document.querySelector('.backyong-before').style.display = 'none';
     document.querySelector('.bbugong-before').style.display = 'none';
     document.querySelector('.bbugong').style.display = 'block';
+    document.querySelector('.center_elements img#main-image').style.display = 'none';
+    document.querySelector('.center_elements p').style.display = 'none';
+    document.querySelector('.center_elements img#angle-down').style.display = 'none';
 
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -183,56 +175,46 @@ function toggleBbugong() {
     bbugong.classList.add('animate-left'); // 뿌공이 중앙으로 이동
 
     document.querySelector('.backyong').style.display = 'none'; // 백경이 사라지기
-
-    // 뿌공이에게 마우스 가져다 대면 하트와 말풍선 띄우지 않기
-    // bbugong.addEventListener('mouseover', function() {
-    //     document.querySelector('#bbugong-heart').style.display = 'none';
-    //     document.querySelector('#bbugong-speech-bubble').style.display = 'none';
-    // });
-
-    // // 뿌공이 이미지 클릭 시 팝업 띄우지 않기 
-    // bbugong.addEventListener('click', function() {
-    //     document.querySelector('.bbugong-popup').style.display = 'none';
-    // });
 }
 
+// 백경이 마우스 포인터에 따라 이동시키기
 // 뿌공이 애니메이션 함수
-// function animateBbugong(startX, startY, endX, endY) {
-//     let progress = 0;
-//     const duration = 500; // 애니메이션 지속 시간 (밀리초)
-//     const startTime = performance.now();
+function animateBbugong(startX, startY, endX, endY) {
+    let progress = 0;
+    const duration = 500; // 애니메이션 지속 시간 (밀리초)
+    const startTime = performance.now();
     
 
-//     function step(currentTime) {
-//         progress = (currentTime - startTime) / duration;
-//         if (progress < 1) {
-//             const x = startX + (endX - startX) * progress;
-//             const y = startY + (endY - startY) * progress;
-//             bbugong.style.left = `${x}px`;
-//             bbugong.style.top = `${y}px`;
-//             console.log(x, y);
-//             requestAnimationFrame(step);
-//         } else {
-//             bbugong.style.left = `${endX}px`;
-//             bbugong.style.top = `${endY}px`;
-//         }
-//     }
+    function step(currentTime) {
+        progress = (currentTime - startTime) / duration;
+        if (progress < 1) {
+            const x = startX + (endX - startX) * progress;
+            const y = startY + (endY - startY) * progress;
+            bbugong.style.left = `${x}px`;
+            bbugong.style.top = `${y}px`;
+            console.log(x, y);
+            requestAnimationFrame(step);
+        } else {
+            bbugong.style.left = `${endX}px`;
+            bbugong.style.top = `${endY}px`;
+        }
+    }
 
-//     requestAnimationFrame(step);
-// }
+    requestAnimationFrame(step);
+}
 
-// // 클릭 이벤트 리스너는 전역에서 한 번만 등록합니다.
-// document.addEventListener('click', (event) => {
-//     const bbugong = document.querySelector('.bbugong');
-//     if (!bbugong) return;
+// 클릭 이벤트 리스너는 전역에서 한 번만 등록합니다.
+document.addEventListener('click', (event) => {
+    const bbugong = document.querySelector('.bbugong');
+    if (!bbugong) return;
 
-//     bbugong.classList.remove('animate-left'); // 뿌공이 중앙 이동 에니메이션 제거
+    bbugong.classList.remove('animate-left'); // 뿌공이 중앙 이동 에니메이션 제거
 
-//     const startX = parseInt(bbugong.style.left) || 0;
-//     const startY = parseInt(bbugong.style.top) || 0;
-//     const endX = event.clientX - bbugong.offsetWidth / 2;
-//     const endY = event.clientY - bbugong.offsetHeight / 2;
+    const startX = parseInt(bbugong.style.left) || 0;
+    const startY = parseInt(bbugong.style.top) || 0;
+    const endX = event.clientX - bbugong.offsetWidth / 2;
+    const endY = event.clientY - bbugong.offsetHeight / 2;
 
-//     animateBbugong(startX, startY, endX, endY);
-//     console.log(startX, startY, endX, endY);
-// });
+    animateBbugong(startX, startY, endX, endY);
+    console.log(startX, startY, endX, endY);
+});
