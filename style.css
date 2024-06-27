@@ -70,13 +70,6 @@ margin: 0;
     transition: margin-left 0.3s ease; /* 메인 콘텐츠 이동 시 부드럽게 애니메이션 적용 */
 }
 
-/* .buildings img {
-    position: absolute;
-    width: 3000px;
-    height: auto;
-}
-*/
-
 #sidebar {
     position: fixed;
     left: -250px;
@@ -93,242 +86,35 @@ margin: 0;
 }
 #toggleBtn {
     position: fixed;
-    left: 10px;
-    top: 10px;
+    left: 0px;
+    top: 400px;
     z-index: 1002;
-    background-color: #ddd;
+    background-color: #d4c8ed;
+    border-radius: 5px;
     border: none;
     padding: 10px;
     cursor: pointer;
     display: none;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 
 }
 .sidebar-content {
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 2px;
 }
 .sidebar-button {
     display: block;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #4CAF50;
+    background-color: #ffcccb;
     color: white;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-
-.A11 { 
-    left: 78%; 
-    top: 48%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 250px;
-    height: 180px;
-    background-color: blue;
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-
-.A12 {
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-    }
-.A13 {
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A15 {
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A15-mini {
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A21 {     
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A22 {
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A23 {     
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A26 { 
-    left: 230px; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 35px;
-    height: 100px;
-    background-color: blue;
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.A27 { 
-    left: calc(-150px + 100%); 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 140px;
-    height: 100px;
-    background-color: blue;
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.B11 {
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
-}
-.B12 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.B13 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.B14 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.B15 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.B21 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.B22 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.C23 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
-.C24 { 
-    left: 28%; 
-    top: 25%; 
-    z-index: 1001; 
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
- }
 
 .floating_mini_icons {
     position: absolute;

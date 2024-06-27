@@ -138,7 +138,8 @@ function toggleBackyong() {
     document.querySelector('.center_elements img#main-image').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'none';
     document.querySelector('.center_elements img#angle-down').style.display = 'none';
-    document.querySelector('.buildings').style.display = 'block'
+    document.querySelector('.buildings').style.display = 'block';
+    document.querySelector('#toggleBtn').style.display = 'block'
 
     backyong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -191,7 +192,15 @@ function toggleBackyong() {
         console.log(startX, startY, endX, endY);
     });
 
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
 
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        toggleBtn.innerHTML = sidebar.classList.contains('open') ? '<' : '>';
+        toggleBtn.style.left = sidebar.classList.contains('open') ? '250px' : '0px';
+        toggleBtn.style.top = sidebar.classList.contains('open') ? '400px' : '400px';
+    });
 }
 
 // 뿌공이 선택 함수
@@ -267,6 +276,8 @@ function toggleBbugong() {
 
     toggleBtn.addEventListener('click', () => {
         sidebar.classList.toggle('open');
-        toggleBtn.innerHTML = sidebar.classList.contains('open') ? '&times;' : '&#9776;';
+        toggleBtn.innerHTML = sidebar.classList.contains('open') ? '<' : '>';
+        toggleBtn.style.left = sidebar.classList.contains('open') ? '250px' : '0px';
+        toggleBtn.style.top = sidebar.classList.contains('open') ? '400px' : '400px';
     });
 }
