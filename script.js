@@ -14,52 +14,16 @@ $(document).ready(function() {
 function clickReset() {
     document.getElementById('reset-button').addEventListener('click', function() {
         // 초기 상태로 되돌리기
-        var backyong = document.querySelector('.backyong');
-        var bbugong = document.querySelector('.bbugong');
+        document.querySelector('.backyong').style.display = 'none';
+        document.querySelector('.bbugong').style.display = 'none';
+        var backyong_before = document.querySelector('.backyong-before');
+        var bbugong_before = document.querySelector('.bbugong-before');
         var overlay = document.getElementById('modal-overlay');
     
         // 백경이와 뿌공이 모두 보이게 하기
-        backyong.style.display = 'block';
-        backyong.classList.remove('animate-right'); // 애니메이션 클래스 제거
-        bbugong.style.display = 'block';
-        bbugong.classList.remove('animate-left');
+        backyong_before.style.display = 'block';
+        bbugong_before.style.display = 'block';
         overlay.style.display = 'none';
-
-        // 백경이에게 마우스 가져다 대면 하트와 말풍선 띄우기
-        backyong.addEventListener('mouseover', function() {
-            document.querySelector('#backyong-heart').style.display = 'block';
-            document.querySelector('#backyong-speech-bubble').style.display = 'block';
-        });
-
-        // 백경이에게서 마우스를 때면 하트와 말풍선 숨기기
-        backyong.addEventListener('mouseout', function() {
-            document.querySelector('#backyong-heart').style.display = 'none';
-            document.querySelector('#backyong-speech-bubble').style.display = 'none';
-        });
-
-        // 백경이 이미지 클릭 시 팝업 띄우기 
-        backyong.addEventListener('click', function() {
-            console.log('백경이 click')
-            document.querySelector('.backyong-popup').style.display = 'block';
-        });
-
-
-        // 뿌공이에게 마우스 가져다 대면 하트와 말풍선 띄우기
-        bbugong.addEventListener('mouseover', function() {
-            document.querySelector('#bbugong-heart').style.display = 'block';
-            document.querySelector('#bbugong-speech-bubble').style.display = 'block';
-        });
-
-        // 뿌공이에게서 마우스를 때면 하트와 말풍선 숨기기
-        bbugong.addEventListener('mouseout', function() {
-            document.querySelector('#bbugong-heart').style.display = 'none';
-            document.querySelector('#bbugong-speech-bubble').style.display = 'none';
-        });
-
-        // 뿌공이 이미지 클릭 시 팝업 띄우기
-        bbugong.addEventListener('click', function(){
-            document.querySelector('.bbugong-popup').style.display = 'block';
-        });
     });
 }
 
