@@ -14,6 +14,11 @@ $(document).ready(function() {
 function clickReset() {
     document.getElementById('reset-button').addEventListener('click', function() {
         // 초기 상태로 되돌리기
+        var mainImage = document.querySelector('.center_elements img#main-image');
+        mainImage.style.display = 'block';
+    
+        document.querySelector('.center_elements p').style.display = 'block';
+        document.querySelector('.center_elements img#angle-down').style.display = 'block';
         document.querySelector('.backyong').style.display = 'none';
         document.querySelector('.bbugong').style.display = 'none';
         var backyong_before = document.querySelector('.backyong-before');
@@ -24,6 +29,10 @@ function clickReset() {
         backyong_before.style.display = 'block';
         bbugong_before.style.display = 'block';
         overlay.style.display = 'none';
+
+        mainImage.style.position = 'absolute'; // ensure it is positioned absolutely
+        mainImage.style.left = '180px'; // desired left position
+        mainImage.style.top = '-280px'; // desired top position
     });
 }
 
@@ -145,6 +154,7 @@ function toggleBackyong() {
     document.querySelector('.center_elements img#main-image').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'none';
     document.querySelector('.center_elements img#angle-down').style.display = 'none';
+    document.querySelector('.buildings').style.display = 'block'
 
     backyong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -209,6 +219,7 @@ function toggleBbugong() {
     document.querySelector('.center_elements img#main-image').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'none';
     document.querySelector('.center_elements img#angle-down').style.display = 'none';
+    document.querySelector('.buildings').style.display = 'block'
 
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -261,4 +272,3 @@ function toggleBbugong() {
         console.log(startX, startY, endX, endY);
     });
 }
-
