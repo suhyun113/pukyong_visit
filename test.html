@@ -1,57 +1,88 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>뿌공이 이동하기</title>
+    <title>Accurate Circle Movement with Scrolling</title>
     <style>
-        #bbugong {
-            position: absolute;
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #container {
+            width: 3000px;
+            height: 3000px;
+            position: relative;
+            background: linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3),
+                        linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3);
+            background-size: 100px 100px;
+            background-position: 0 0, 50px 50px;
+        }
+        #circle {
             width: 50px;
             height: 50px;
-            background-color: pink;
             border-radius: 50%;
-            cursor: pointer;
+            background-color: red;
+            position: absolute;
+            /* transition: all 0.3s ease; */
         }
     </style>
 </head>
 <body>
-    <img src="assets/images/character/bbugong.gif" id="bbugong"></div>
+    <div id="container">
+        <img src="assets/images/character/bbugong.gif" id="circle"></div>
+        <p>안녕</p>
+    </div>
 
     <script>
-        const bbugong = document.getElementById('.bbugong');
+        const container = document.getElementById('container');
+        const circle = document.getElementById('circle');
 
-        function animateBbugong(startX, startY, endX, endY) {
-            let progress = 0;
-            const duration = 500; // 애니메이션 지속 시간 (밀리초)
-            const startTime = performance.now();
+        let circleX = window.innerWidth / 2;
+        let circleY = window.innerHeight / 2;
 
-            function step(currentTime) {
-                progress = (currentTime - startTime) / duration;
-                if (progress < 1) {
-                    const x = startX + (endX - startX) * progress;
-                    const y = startY + (endY - startY) * progress;
-                    bbugong.style.left = `${x}px`;
-                    bbugong.style.top = `${y}px`;
-                    requestAnimationFrame(step);
-                } else {
-                    bbugong.style.left = `${endX}px`;
-                    bbugong.style.top = `${endY}px`;
-                }
+        function updateCirclePosition(x, y, instant = false) {
+            circleX = x;
+            circleY = y;
+            if (instant) {
+                circle.style.transition = 'none';
             }
-
-            requestAnimationFrame(step);
+            circle.style.left = `${circleX - 25}px`;
+            circle.style.top = `${circleY - 25}px`;
+            if (instant) {
+                circle.offsetHeight; // Trigger reflow
+                circle.style.transition = '';
+            }
         }
 
-        document.addEventListener('click', (event) => {
-            const startX = parseInt(bbugong.style.left) || 0;
-            const startY = parseInt(bbugong.style.top) || 0;
-            const endX = event.clientX - bbugong.offsetWidth / 2;
-            const endY = event.clientY - bbugong.offsetHeight / 2;
+        function centerScreen(x, y) {
+            const scrollX = x - window.innerWidth / 2;
+            const scrollY = y - window.innerHeight / 2;
+            
+            window.scrollTo({
+                left: scrollX,
+                top: scrollY,
+                behavior: 'smooth'
+            });
+        }
 
-            animateBbugong(startX, startY, endX, endY);
-            console.log(startX, startY, endX, endY);
+        updateCirclePosition(circleX, circleY, true);
+        centerScreen(circleX, circleY);
+
+        container.addEventListener('click', (e) => {
+            const rect = container.getBoundingClientRect();
+            const clickX = e.clientX + window.scrollX - rect.left;
+            const clickY = e.clientY + window.scrollY - rect.top;
+            
+            updateCirclePosition(clickX, clickY);
+            centerScreen(clickX, clickY);
         });
+
+        window.addEventListener('resize', () => {
+            centerScreen(circleX, circleY);
+        });
+        
     </script>
 </body>
 </html>

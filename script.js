@@ -21,6 +21,7 @@ function clickReset() {
         document.querySelector('.center_elements img#angle-down').style.display = 'block';
         document.querySelector('.backyong').style.display = 'none';
         document.querySelector('.bbugong').style.display = 'none';
+        document.querySelector('.buildings').style.display = 'none';
         var backyong_before = document.querySelector('.backyong-before');
         var bbugong_before = document.querySelector('.bbugong-before');
         var overlay = document.getElementById('modal-overlay');
@@ -36,21 +37,21 @@ function clickReset() {
     });
 }
 
-const audioContainer = document.querySelector('#audioContainer');
-const audioToggleButton = document.querySelector('#audio-toggleButton');
+    const audioContainer = document.querySelector('#audioContainer');
+    const audioToggleButton = document.querySelector('#audio-toggleButton');
 
     audioContainer.autoplay = false; // 웹을 열면 자동 재생x
     audioContainer.loop = true; // 반복 재생 설정
 
-    // 버튼 클릭 시 재생 및 일시 정지 토글
-function toggleMusic() {
-    if (audioContainer.paused) {
-        audioContainer.play();
-        audioToggleButton.textContent = '🔊'; // 볼륨 모양 버튼
-    } else {
-        audioContainer.pause();
-        audioToggleButton.textContent = '🔇'; // 금지 모양 버튼
-    }
+        // 버튼 클릭 시 재생 및 일시 정지 토글
+    function toggleMusic() {
+        if (audioContainer.paused) {
+            audioContainer.play();
+            audioToggleButton.textContent = '🔊'; // 볼륨 모양 버튼
+        } else {
+            audioContainer.pause();
+            audioToggleButton.textContent = '🔇'; // 금지 모양 버튼
+        }
 }
 
 function rotateAndMove() {
@@ -76,24 +77,7 @@ function rotateAndMove() {
     setTimeout(() => {
         backyong_before.style.left = 'calc(50% - 100px)';
         bbugong_before.style.left = 'calc(50% - 100px)'; // 중앙 이미지 왼쪽에 위치
-
-        // 건물 이미지를 표시
-        // bbugong.addEventListener('transitionend', function showBuildings() {
-        //     const buildings = document.querySelector('.buildings');
-        //     buildings.style.display = 'flex';
-        //     bbugong.removeEventListener('transitionend', showBuildings);
-        // }, { once: true }); // 이벤트 리스너는 한 번만 실행되고 제거됨
     }, 100); // 약간의 지연을 줘서 자연스럽게 이동 시작
-
-    // const duration = 3000;
-    // setTimeout(() => {
-    //     const backyongSpeechBubble = document.querySelector('#backyong-container .speech-bubble');
-    //     backyongSpeechBubble.style.display = 'block';
-        
-    //     const bbugongSpeechBubble = document.querySelector('#bbugong-container .speech-bubble');
-    //     bbugongSpeechBubble.style.display = 'block';
-    // }, duration);
-
 }
 // 팝업 토글 함수
 function togglePopup(character) {
@@ -165,8 +149,8 @@ function toggleBackyong() {
 
     document.querySelector('.bbugong').style.display = 'none';// 뿌공이 사라지기
 
-        // 백경이 마우스 포인터에 따라 이동시키기
-    // 뿌공이 애니메이션 함수
+    // 백경이 마우스 포인터에 따라 이동시키기
+    // 백경이 애니메이션 함수
     function animateBackyong(startX, startY, endX, endY) {
         let progress = 0;
         const duration = 500; // 애니메이션 지속 시간 (밀리초)
@@ -207,6 +191,7 @@ function toggleBackyong() {
         console.log(startX, startY, endX, endY);
     });
 
+
 }
 
 // 뿌공이 선택 함수
@@ -219,14 +204,15 @@ function toggleBbugong() {
     document.querySelector('.center_elements img#main-image').style.display = 'none';
     document.querySelector('.center_elements p').style.display = 'none';
     document.querySelector('.center_elements img#angle-down').style.display = 'none';
-    document.querySelector('.buildings').style.display = 'block'
+    document.querySelector('.buildings').style.display = 'block';
+    document.querySelector('#toggleBtn').style.display = 'block'
 
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
     document.querySelector('#reset-button').style.display = 'block';
 
-    var bbugong = document.querySelector('.bbugong');
-    bbugong.classList.add('animate-left'); // 뿌공이 중앙으로 이동
+    var bbugongElement = document.querySelector('.bbugong');
+    bbugongElement.classList.add('animate-left'); // 뿌공이 중앙으로 이동
 
     document.querySelector('.backyong').style.display = 'none'; // 백경이 사라지기
 
@@ -270,5 +256,17 @@ function toggleBbugong() {
 
         animateBbugong(startX, startY, endX, endY);
         console.log(startX, startY, endX, endY);
+
+        // document.body.style.width = '100vw';
+        // document.body.style.height = '100vh';
+        // document.body.style.overflow = 'auto';
+    });
+
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        toggleBtn.innerHTML = sidebar.classList.contains('open') ? '&times;' : '&#9776;';
     });
 }

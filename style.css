@@ -1,14 +1,13 @@
 body, html {
-    margin: 0;
+margin: 0;
     padding: 0;
-    width:100%;
+    width: 100%;
     height: 100%;
     position: relative;
-    /* perspective: 1000px;  3D*/
-    overflow: hidden;
+    overflow: hidden; /* 스크롤 가능하게 설정 */
     background-color: white;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
 
@@ -58,44 +57,278 @@ body, html {
     border: none; /* 테두리 제거 */
     border-radius: 5px; /* 테두리 둥글기 설정 */
     cursor: pointer;
-    z-index: 3; /* 다른 요소들 위에 표시 */
+    z-index: 1000; /* 다른 요소들 위에 표시 */
 }
 
 .buildings {
     display: none;
     position: absolute;
-    width: 100%;
-    bottom: -200px;
-    z-index: 1; /* 건물 이미지가 격자 무늬 위에 표시되도록 설정 */
-    justify-content: center;
-    gap: 30px;
+    top: -10%;
+    left: 0%;
+    z-index: 100; /* 건물 이미지가 격자 무늬 위에 표시되도록 설정 */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* 메인 콘텐츠 이동 시 부드럽게 애니메이션 적용 */
 }
 
-.buildings img {
+/* .buildings img {
     position: absolute;
-    width: 150px;
+    width: 3000px;
     height: auto;
 }
+*/
 
-.A11 { left: -0%; top: 0%; z-index: 2; }
-.A12 { left: 20%; top: 20%; z-index: 1; }
-.A13 { left: 30%; top: 30%; }
-.A15 { left: 40%; top: 40%; }
-.A15-mini { left: 50%; top: 50%; }
-.A21 { left: 60%; top: 60%; }
-.A22 { left: 70%; top: 70%; }
-.A23 { left: 80%; top: 80%; }
-.A26 { left: 90%; top: 90%; }
-.A27 { left: 10%; top: 90%; }
-.B11 { left: 20%; top: 80%; }
-.B12 { left: 30%; top: 70%; }
-.B13 { left: 40%; top: 60%; }
-.B14 { left: 50%; top: 50%; }
-.B15 { left: 60%; top: 40%; }
-.B21 { left: 70%; top: 30%; }
-.B22 { left: 70%; top: 30%; }
-.C23 { left: 70%; top: 30%; }
-.C24 { left: 70%; top: 30%; }
+#sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f1f1f1;
+    transition: left 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+#sidebar.open {
+    left: 0;
+}
+#toggleBtn {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1002;
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+
+}
+.sidebar-content {
+    padding: 20px;
+    margin-top: 50px;
+}
+.sidebar-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.A11 { 
+    left: 78%; 
+    top: 48%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    background-color: blue;
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+
+.A12 {
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+    }
+.A13 {
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A15 {
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A15-mini {
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A21 {     
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A22 {
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A23 {     
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A26 { 
+    left: 230px; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 35px;
+    height: 100px;
+    background-color: blue;
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.A27 { 
+    left: calc(-150px + 100%); 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    background-color: blue;
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.B11 {
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+}
+.B12 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.B13 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.B14 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.B15 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.B21 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.B22 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.C23 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
+.C24 { 
+    left: 28%; 
+    top: 25%; 
+    z-index: 1001; 
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
+ }
 
 .floating_mini_icons {
     position: absolute;
@@ -208,7 +441,7 @@ body, html {
     position: absolute;
     top: 78%;
     left: calc(-380px + 100%);
-    z-index: 3; /*가장 위쪽에 배치*/
+    z-index: 1000; /*가장 위쪽에 배치*/
     width: 80px;
     height: auto;
     cursor: pointer;
@@ -219,7 +452,7 @@ body, html {
     position: absolute;
     top: 75.5%;
     left: calc(-130px + 100%);
-    z-index: 3; /* 가장 위쪽에 배치 */
+    z-index: 1000; /*가장 위쪽에 배치 */
     width: 60px;
     height: auto;
     cursor: pointer;
