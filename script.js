@@ -23,6 +23,7 @@ function clickReset() {
         document.querySelector('.bbugong').style.display = 'none';
         document.querySelector('.buildings').style.display = 'none';
         document.querySelector('#toggleBtn').style.display = 'none';
+        document.querySelector('#sidebar').style.display = 'none';
         var backyong_before = document.querySelector('.backyong-before');
         var bbugong_before = document.querySelector('.bbugong-before');
         var overlay = document.getElementById('modal-overlay');
@@ -140,7 +141,8 @@ function toggleBackyong() {
     document.querySelector('.center_elements p').style.display = 'none';
     document.querySelector('.center_elements img#angle-down').style.display = 'none';
     document.querySelector('.buildings').style.display = 'block';
-    document.querySelector('#toggleBtn').style.display = 'block'
+    document.querySelector('#toggleBtn').style.display = 'block';
+    document.querySelector('#sidebar').style.display = 'block';
 
     backyong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -176,8 +178,7 @@ function toggleBackyong() {
     
         requestAnimationFrame(step);
     }
-    
-    // 클릭 이벤트 리스너는 전역에서 한 번만 등록합니다.
+
     document.addEventListener('click', (event) => {
         const backyong = document.querySelector('.backyong');
         if (!backyong) return;
@@ -215,7 +216,10 @@ function toggleBbugong() {
     document.querySelector('.center_elements p').style.display = 'none';
     document.querySelector('.center_elements img#angle-down').style.display = 'none';
     document.querySelector('.buildings').style.display = 'block';
-    document.querySelector('#toggleBtn').style.display = 'block'
+    document.querySelector('#toggleBtn').style.display = 'block';
+    document.querySelector('#sidebar').style.display = 'block';
+
+    
 
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -252,7 +256,6 @@ function toggleBbugong() {
         requestAnimationFrame(step);
     }
 
-    // 클릭 이벤트 리스너는 전역에서 한 번만 등록합니다.
     document.addEventListener('click', (event) => {
         const bbugong = document.querySelector('.bbugong');
         if (!bbugong) return;
@@ -266,10 +269,6 @@ function toggleBbugong() {
 
         animateBbugong(startX, startY, endX, endY);
         console.log(startX, startY, endX, endY);
-
-        // document.body.style.width = '100vw';
-        // document.body.style.height = '100vh';
-        // document.body.style.overflow = 'auto';
     });
 
     const toggleBtn = document.getElementById('toggleBtn');
