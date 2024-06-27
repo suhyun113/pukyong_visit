@@ -24,6 +24,7 @@ function clickReset() {
         document.querySelector('.buildings').style.display = 'none';
         document.querySelector('#toggleBtn').style.display = 'none';
         document.querySelector('#sidebar').style.display = 'none';
+
         var backyong_before = document.querySelector('.backyong-before');
         var bbugong_before = document.querySelector('.bbugong-before');
         var overlay = document.getElementById('modal-overlay');
@@ -36,24 +37,34 @@ function clickReset() {
         mainImage.style.position = 'absolute'; // ensure it is positioned absolutely
         mainImage.style.left = '180px'; // desired left position
         mainImage.style.top = '-280px'; // desired top position
+
+        const toggleBtn = document.getElementById('toggleBtn');
+        const sidebar = document.getElementById('sidebar');
+    
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            toggleBtn.innerHTML = sidebar.classList.contains('open') ? '<' : '>';
+            toggleBtn.style.left = sidebar.classList.contains('open') ? '250px' : '0px';
+            toggleBtn.style.top = sidebar.classList.contains('open') ? '400px' : '400px';
+        });
     });
 }
 
-    const audioContainer = document.querySelector('#audioContainer');
-    const audioToggleButton = document.querySelector('#audio-toggleButton');
+const audioContainer = document.querySelector('#audioContainer');
+const audioToggleButton = document.querySelector('#audio-toggleButton');
 
-    audioContainer.autoplay = false; // 웹을 열면 자동 재생x
-    audioContainer.loop = true; // 반복 재생 설정
+audioContainer.autoplay = false; // 웹을 열면 자동 재생x
+audioContainer.loop = true; // 반복 재생 설정
 
-        // 버튼 클릭 시 재생 및 일시 정지 토글
-    function toggleMusic() {
-        if (audioContainer.paused) {
-            audioContainer.play();
-            audioToggleButton.textContent = '🔊'; // 볼륨 모양 버튼
-        } else {
-            audioContainer.pause();
-            audioToggleButton.textContent = '🔇'; // 금지 모양 버튼
-        }
+// 버튼 클릭 시 재생 및 일시 정지 토글
+function toggleMusic() {
+    if (audioContainer.paused) {
+        audioContainer.play();
+        audioToggleButton.textContent = '🔊'; // 볼륨 모양 버튼
+    } else {
+        audioContainer.pause();
+        audioToggleButton.textContent = '🔇'; // 금지 모양 버튼
+    }
 }
 
 function rotateAndMove() {
@@ -218,8 +229,6 @@ function toggleBbugong() {
     document.querySelector('.buildings').style.display = 'block';
     document.querySelector('#toggleBtn').style.display = 'block';
     document.querySelector('#sidebar').style.display = 'block';
-
-    
 
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
