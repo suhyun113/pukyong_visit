@@ -22,6 +22,7 @@ function clickReset() {
         document.querySelector('.backyong').style.display = 'none';
         document.querySelector('.bbugong').style.display = 'none';
         document.querySelector('.buildings').style.display = 'none';
+        document.querySelector('#toggleBtn').style.display = 'none';
         var backyong_before = document.querySelector('.backyong-before');
         var bbugong_before = document.querySelector('.bbugong-before');
         var overlay = document.getElementById('modal-overlay');

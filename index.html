@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet"> <!--백경이 글씨체-->
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Single+Day&display=swap" rel="stylesheet"> <!--뿌공이 글씨체-->
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -23,17 +24,309 @@
 
     <!-- 건물 이미지 -->
     <div class="buildings">
-        <img src="assets/images/building_image/A16.png" alt="A16" class="building1">
-        <img src="assets/images/building_image/A27.png" alt="A27" class="building2">
-        <img src="assets/images/building_image/A23.png" alt="A23" class="building3">
-        <img src="assets/images/building_image/A22_grass.png" alt="A22_grass" class="building4">
-        <img src="assets/images/building_image/A22.png" alt="A22" class="building5">
-        <img src="assets/images/building_image/A21.png" alt="A21" class="building6">
-        <img src="assets/images/building_image/A15.png" alt="A15" class="building7">
-        <img src="assets/images/building_image/A13.png" alt="A13" class="building8">
-        <img src="assets/images/building_image/A12.png" alt="A12" class="building9">
-        <img src="assets/images/building_image/A11.png" alt="A11" class="building10">
+        <!-- <div class="A">
+            <img src="assets/images/building_image/A11.png" alt="A11" class="A11">
+            <img src="assets/images/building_image/A12.png" alt="A12" class="A12">
+            <img src="assets/images/building_image/A13.png" alt="A13" class="A13">
+            <img src="assets/images/building_image/A15.png" alt="A15" class="A15">
+            <img src="assets/images/building_image/A15_mini.png" alt="A15-mini" class="A15-mini">
+            <img src="assets/images/building_image/A21.png" alt="A21" class="A21">
+            <img src="assets/images/building_image/A22.png" alt="A22" class="A22">
+            <img src="assets/images/building_image/A23.png" alt="A23" class="A23">
+            <img src="assets/images/building_image/A26.png" alt="A26" class="A26">
+            <img src="assets/images/building_image/A27.png" alt="A27" class="A27">
+        </div>
+        <div class="B">
+            <img src="assets/images/building_image/B11.png" alt="B11" class="B11">
+            <img src="assets/images/building_image/B12.png" alt="B12" class="B12">
+            <img src="assets/images/building_image/B13.png" alt="B13" class="B13">
+            <img src="assets/images/building_image/B14.png" alt="B14" class="B14">
+            <img src="assets/images/building_image/B15.png" alt="B15" class="B15">
+            <img src="assets/images/building_image/B21.png" alt="B21" class="B21">
+            <img src="assets/images/building_image/B22.png" alt="B22" class="B22">
+        </div>
+        <div class="C">
+            <img src="assets/images/building_image/C23.png" alt="C23" class="C23">
+            <img src="assets/images/building_image/C24.png" alt="C24" class="C24">
+        </div> -->
+        <img src="assets/images/building_image/all-buildings.png" alt="building_image" class="building_image">
     </div>
+
+    <!-- 건물 버튼 -->
+    <button id="toggleBtn">></button>
+    <div id="sidebar">
+        <div class="sidebar-content">
+            <button data-modal="A11" class="sidebar-button">A11</button>
+            <button data-modal="A12" class="sidebar-button">A12</button>
+            <button data-modal="A13" class="sidebar-button">A13</button>
+            <button data-modal="A15" class="sidebar-button">A15</button>
+            <button data-modal="A21" class="sidebar-button">A21</button>
+            <button data-modal="A22" class="sidebar-button">A22</button>
+            <button data-modal="A23" class="sidebar-button">A23</button>
+            <button data-modal="A26" class="sidebar-button">A26</button>
+            <!-- <button data-modal="A27" class="sidebar-button">A27</button> -->
+            <button data-modal="B11" class="sidebar-button">B11</button>
+            <button data-modal="B12" class="sidebar-button">B12</button>
+            <button data-modal="B13" class="sidebar-button">B13</button>
+            <button data-modal="B14" class="sidebar-button">B14</button>
+            <button data-modal="B15" class="sidebar-button">B15</button>
+            <button data-modal="B21" class="sidebar-button">B21</button>
+            <button data-modal="B22" class="sidebar-button">B22</button>
+            <button data-modal="C23" class="sidebar-button">C23</button>
+            <button data-modal="C24" class="sidebar-button">C24</button>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- A11 12 13 15 21 23   -->
+    <!-- B11 12 13 14 15 22   -->
+    <!-- C23 24  -->
+    <!-- 나비센터 편의점 / 잔디광장 -->
+
+    <!-- A11 -->
+    <div id="A11" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A11 대학본부</h2>
+            <hr>
+            <img class="modal-img" src="assets/images/real_building_image/A11_대학본부.png" alt="">
+            <p>대학원행정실 / 학생복지과 / 학사관리과 / 학사서비스센터 / 학술진흥부 / 학생상담실
+                총무과 / 교무과 / 학무부 / 재무과 / 시설과 / 기획과</p>
+            <p>재학증명서, 재적 증명서 </p>
+        </div>
+    </div>
+
+    <!-- A12 -->
+    <div id="A12" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A12 웅비관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/A12 웅비관.png" alt="">
+            <p> 글로벌자율전공공학부 강의실 / 의공학과 / 식품공학과 / 기계조선융합공학과 </p>
+        </div>
+    </div>
+    
+    <!-- A13 -->
+    <div id="A13" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A13 누리관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/A13 누리관.png" alt="">
+            <p>정보통신공학과 / 전자공학과</p>
+        </div>
+    </div>
+
+    <!-- A15 -->
+    <div id="A15" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A15 향파관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/A15 향파관.png" alt="">
+            <p>미래융합대학 + 정보융합대학</p>
+            <p>전공 강의실 : 컴퓨터공학과 / 소방공학과 / 전자공학과 / 정보통신공학과 / IT융합응용공학과 / 식품공학과</p>
+        </div>
+    </div>
+    <!-- <div id="A15_1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A15 워커하우스</h2>
+            <hr>
+            <img src="img\A15 워커하우스.png" alt="">
+        </div>
+    </div> -->
+    <!-- A21 -->
+    <div id="A21" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A21 미래관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/A21 미래관.png" alt="">
+            <p>국제 교류부 / LILAC 교직원식당 / GS25 </p>
+        </div>
+    </div>
+    
+    <!-- A22 -->
+    <div id="A22" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A22 디자인관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/A22 디자인관.png" alt="">
+            <p>공업디자인학과 / 시각디자인학과 학생회</p>
+        </div>
+    </div>
+
+    <!-- A23 -->
+    <div id="A23" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>A23 나래관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/A23 나래관.png" alt="">
+            <p>안전공학과 / 토목공학과 / 패션디자인학과 학생회실</p>
+        </div>
+    </div>
+    
+    <!-- B11 -->
+    <div id="B11" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B11 위드센터</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/B11 위드센터.png" alt="">
+            <p>학생회실 : 식품공학과 / 생물공학과 / 식품영양학과 / 자원생물학과 / 해양바이오 신소재학과 / 수산생명의학과 / 해양생산시스템관리학부 / 해양생산시스템관리학부</p>
+        </div>
+    </div>
+
+    <!-- B12 -->
+    <div id="B12" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B12 나비센터</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/B12 나비센터.png" alt="">
+            <p>학생회실 : IT융합응용공학과 / 정보통신공학 / 상태공학과 / 에너지자원공학과 / 해양학과</p>
+            <p>총학생회 : 인사대 / 수과대 / 자연과대 / 경영대학 </p>
+        </div>
+    </div>
+
+    <!-- B12 -->
+    <!-- <div id="B12_1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B12_1 나비센터 옆 편의점</h2>
+            <hr>
+            <img src="img\나비센터 옆 편의점.png" alt="">
+
+        </div>
+    </div> -->
+
+    <!-- B13 -->
+    <div id="B13" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B13 충무관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/B13 충무관.png" alt="">
+            <p>학생회실 : 지구환경과학과 / 해양공학과 / 환경공학과 / 조선해양시스템공학과 / 공간정보시스템공학과 / 환경대기과학과</p>
+        </div>
+    </div>
+
+    <!-- B14 -->
+    <div id="B14" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B14 환경해양관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/B14 환경해양관.png" alt="">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- B15 -->
+    <div id="B15" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B15 자연과학1관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/B15 자연과학1관.png" alt="">
+            <p>전공강의실 : 물리학과 / 화학과 / 식품영양학과 / </p>
+        </div>
+    </div>
+
+    <!-- B21 -->
+    <div id="B21" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B21 가온관</h2>
+            <hr>
+            <img  class="modal-img" src="assets/images/real_building_image/B21 가온관.png" alt="">
+            <p>서점 / 우편쥐급국 / 매점 / 학생휴게실 / 헤어클럽 / 사진관 / 여행사 / 복사점 / 통신실 / 전자점 / 화장품점</p>
+            <p>사무실 : 제어계측공학과</p>
+        </div>
+    </div>
+
+    <!-- B22 -->
+    <div id="B22" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>B22 청운관</h2>
+            <hr>
+            <img class="modal-img" src="assets/images/real_building_image/B22 청운관.png" alt="">
+            <p>도서관</p>
+        </div>
+    </div>
+
+
+    <!-- C23 -->
+    <div id="C23" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>C23 호연관</h2>
+            <hr>
+            <img class="modal-img" src="assets/images/real_building_image/C23 호연관.png" alt="">
+            <p>총학생회실 : 환경해양대학 </p>
+            <p>학생회실 : 글로벌자율전공 공학부 / 해양수산경영학과 </p>
+            <p>전공강의실 : 환경공학과 / 조선해양시스템 / 미생물학과 / 해양수산경영학과 / 해양학과 / 국제통상학부 / 글로벌자유전공학부</p>
+        </div>
+    </div>
+
+    <!-- C24 -->
+    <div id="C24" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>C24 자연과학2관</h2>
+            <hr>
+            <img class="modal-img" src="assets/images/real_building_image/C24 자연과학2관.png" alt="">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- 잔디광장 -->
+    <!-- <div id="잔디광장" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>잔디광장</h2>
+            <hr>
+            <img src="img\잔디광장.png" alt="">
+            <p></p>
+        </div>
+    </div> -->
+
+    <script>
+        // 모든 모달 열기 버튼을 선택
+        var btns = document.getElementsByClassName("sidebar-button");
+        
+        // 각 버튼에 이벤트 리스너 추가
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function() {
+                var modalId = this.getAttribute("data-modal");
+                document.getElementById(modalId).style.display = "block";
+            }
+        }
+
+        // 모든 닫기 버튼을 선택
+        var spans = document.getElementsByClassName("close");
+        
+        // 각 닫기 버튼에 이벤트 리스너 추가
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function() {
+                this.parentElement.parentElement.style.display = "none";
+            }
+        }
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
 
     <!-- 첫 번째 페이지 - 공중에 떠 있는 아이콘들 -->
     <div class="floating_mini_icons">
@@ -54,14 +347,16 @@
 
     <!-- 캐릭터 이미지 및 캐릭터 말풍선-->
     <div id="backyong-container">
-        <img onclick="togglePopup()" src="assets/images/character/backyong.gif" alt="backyong" class="backyong" id="backyong">
+        <img src="assets/images/character/backyong.gif" alt="backyong" class="backyong" id="backyong">
+        <img onclick="togglePopup()" src="assets/images/character/backyong.gif" alt="backyong-before" class="backyong-before" id="backyong-before">
         <img src="assets/images/heart.png" alt="heart" id="backyong-heart">
         <div id="backyong-speech-bubble" class="speech-bubble">
             <p> 안녕! 나는 백경이야~ </p>
         </div>
     </div>
     <div id="bbugong-container">
-        <img onclick="togglePopup()" src="assets/images/character/bbugong.gif" alt="bbugong" class="bbugong" id="bbugong">
+        <img src="assets/images/character/bbugong.gif" alt="bbugong" class="bbugong" id="bbugong">
+        <img onclick="togglePopup()" src="assets/images/character/bbugong.gif" alt="bbugong-before" class="bbugong-before" id="bbugong-before">
         <img src="assets/images/heart.png" alt="heart" id="bbugong-heart">
         <div id="bbugong-speech-bubble" class="speech-bubble">
             <p> 안녕! 나는 뿌공이야~ </p>
