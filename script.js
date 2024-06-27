@@ -175,6 +175,9 @@ function closeBbugongPopup() {
 function toggleBackyong() {
     var backyong_popup = document.getElementById('backyong-popup');
     var overlay = document.getElementById('modal-overlay');
+    document.querySelector('.backyong-before').style.display = 'none';
+    document.querySelector('.bbugong-before').style.display = 'none';
+    document.querySelector('.backyong').style.display = 'block';
 
     backyong_popup.style.display = 'none';
     overlay.style.display = 'none';
@@ -204,14 +207,16 @@ function toggleBackyong() {
 function toggleBbugong() {
     var bbugong_popup = document.getElementById('bbugong-popup');
     var overlay = document.getElementById('modal-overlay');
+    document.querySelector('.backyong-before').style.display = 'none';
+    document.querySelector('.bbugong-before').style.display = 'none';
+    document.querySelector('.bbugong').style.display = 'block';
+
     bbugong_popup.style.display = 'none';
     overlay.style.display = 'none';
     document.querySelector('#reset-button').style.display = 'block';
 
     var bbugong = document.querySelector('.bbugong');
     bbugong.classList.add('animate-left'); // 뿌공이 중앙으로 이동
-    console.log(bbugong.style.left);
-    console.log(bbugong.style.top);
 
     document.querySelector('.backyong').style.display = 'none'; // 백경이 사라지기
 

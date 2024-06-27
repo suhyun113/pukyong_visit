@@ -202,7 +202,8 @@ body, html {
 
 .backyong {
     position: absolute;
-    top: 80%;
+    top: 78%;
+    left: calc(-380px + 100%);
     z-index: 3; /*가장 위쪽에 배치*/
     width: 80px;
     height: auto;
@@ -212,7 +213,8 @@ body, html {
 
 .bbugong {
     position: absolute;
-    top: 78%;
+    top: 75.5%;
+    left: calc(-130px + 100%);
     z-index: 3; /* 가장 위쪽에 배치 */
     width: 60px;
     height: auto;
@@ -442,10 +444,10 @@ body, html {
 
 @keyframes moveRight {
     from {
-        transform: translateX(40);
+        transform: translateX(-100);
     }
     to {
-        transform: translateX(300px) translateY(-50px);
+        transform: translateX(140px) translateY(-20px);
     }
 }
 
@@ -456,9 +458,9 @@ body, html {
 
 @keyframes moveLeft {
     from {
-        transform: translateX(40);
+        transform: translateX(-100);
     }
     to {
-        transform: translateX(300px) translateY(-20px);
+        transform: translateX(-80px) translateY(20px);
     }
 }
