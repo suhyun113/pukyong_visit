@@ -176,12 +176,23 @@ body, html {
     transform: rotateX(50deg) rotateY(0deg) rotateZ(-25deg) translateZ(-100px);
 }
 
-.backyong {
-    /* filter: brightness(0.5); */
+/* .backyong-before {
     position: absolute;
     top: 80%;
     left: -600px; /* 초기 위치 설정 */
-    transform: translateX(250%) translateY(-20%);
+    /* transform: translateX(250%) translateY(-20%);
+    transition: left 2s ease;
+    z-index: 3; /*가장 위쪽에 배치*/
+    /* width: 80px;
+    height: auto;
+    cursor: pointer;
+} */ 
+
+.backyong {
+    position: absolute;
+    top: 80%;
+    left: -600px; /*초기 위치 설정 */
+    transform: translateX(120%) translateY(-20%); 
     transition: left 2s ease;
     z-index: 3; /*가장 위쪽에 배치*/
     width: 80px;
@@ -190,24 +201,23 @@ body, html {
 }
 
 .bbugong {
-    /* filter: brightness(0.5); */
     position: absolute;
-    /* top: 80%;
+    top: 78%;
     left: -600px; /* 초기 위치 설정 */
-    /* transform: translateX(580%) translateY(-40%);
-    transition: left 2s ease; */
-    z-index: 3; /*가장 위쪽에 배치*/
+    transform: translateX(500%) translateY(-30%);
+    transition: left 2s ease;
+    z-index: 3; /* 가장 위쪽에 배치 */
     width: 60px;
     height: auto;
     cursor: pointer;
-    transform: translate(-50%, -50%); 
+    display: none;
 }
 
 #backyong-heart {
     position: absolute;
     top: 77%;
     /* left: 65.5%; */
-    left: calc(130px + 50%);
+    left: calc(25px + 50%);
     width: 20px;
     height: auto;
     display: none; 
@@ -219,8 +229,8 @@ body, html {
 
 #bbugong-heart {
     position: absolute;
-    top: 75.5%;
-    left: calc(270px + 50%);
+    top: 74%;
+    left: calc(222px + 50%);
     width: 15px;
     height: auto;
     display: none; 
@@ -233,7 +243,7 @@ body, html {
 #backyong-speech-bubble {
     position: absolute;
     top: 77%;
-    left: calc(-20px + 50%);
+    left: calc(-128px + 50%);
     background-color: #ffcccb;
     border: 1px solid #d9f0ff;
     padding: 10px;
@@ -249,8 +259,8 @@ body, html {
 
 #bbugong-speech-bubble {
     position: absolute;
-    top: 75%;
-    left: calc(290px + 50%);
+    top: 73%;
+    left: calc(240px + 50%);
     background-color: #d4c8ed;
     border: 1px solid #d9f0ff;
     padding: 10px;
